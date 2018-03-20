@@ -1,0 +1,30 @@
+﻿@model BO.Warrior
+
+<h4>Warrior</h4>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Titre)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Titre)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.NomPropre)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.NomPropre)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Weapon)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Weapon.Nom)
+    </dd>
+
+</dl>

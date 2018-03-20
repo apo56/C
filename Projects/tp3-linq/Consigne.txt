@@ -1,0 +1,12 @@
+- Afficher tous les prénoms des auteurs dont le nom commence par "GA"
+- Compter tous les auteurs dont le nom commence par 'G'
+- Afficher les auteurs et la liste de leurs livres
+- Afficher les titres de tous les livres triés par ordre alphabétique
+- Afficher le plus grand nombre de page dans un livre
+- Afficher le(s) livre(s) ayant le plus grand nombre de pages
+- Afficher les auteurs facturés et la moyenne de leur(s) facture(s)
+- Afficher la liste des livres dont le nombre de page est > à la moyenne
+- Afficher l'auteur ayant écrit le plus de livres
+- Afficher l'auteur ayant écrit le moins de livres
+- Afficher l'auteur le plus riche
+- Afficher l'auteur ayant le meilleur prix moyen de vente sur ses livres.
