@@ -9,11 +9,13 @@ namespace DAL
 {
     public class RepositoryFactory
     {
+        
 
         public static IRepository<T> GetRepository<T>() where T : IIdentifiable
         {
             return new SerializerRepository<T>();
         }
+
 
     }
 }
