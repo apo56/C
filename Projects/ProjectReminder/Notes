@@ -1,6 +1,37 @@
 Note ProjectReminder
 __________________________________
 
+Eviter méthode static dans site web
+-----
+controller = classe
+action = methode
+view = cshtml
+-----
+Objet générique:
+public class test <T>
+
+le type générique devient un param
+-----
+astuce sympa faire list en générique
+______________________
+En C#
+int=INTEGER -> type primitif intégré à int
+
+______________________
+Classe abstraite = pas d'instanciation || uniquement héritage
+
+ne pas oublier override
+______________________
+
+Très utile!!!
+public override String ToString(){
+            String description =$"Aire =  {Air()}  \n";
+            description += "Perimetre = " + Perimetre() + Environment.NewLine;
+            return description;
+			}
+$"Aire =  {Air()}";
+______________________
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
