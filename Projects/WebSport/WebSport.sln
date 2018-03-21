@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSport", "WebSport\WebSport.csproj", "{B46C7DFC-86EA-409B-8DB2-DA582A037153}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BO\BO.csproj", "{6BF1C2B2-2E0B-450E-892A-D13448275FD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "BLL\DAL.csproj", "{AAD9F96E-A4C7-4F58-8F3D-B533A4D4FAB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B46C7DFC-86EA-409B-8DB2-DA582A037153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B46C7DFC-86EA-409B-8DB2-DA582A037153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B46C7DFC-86EA-409B-8DB2-DA582A037153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B46C7DFC-86EA-409B-8DB2-DA582A037153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF1C2B2-2E0B-450E-892A-D13448275FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF1C2B2-2E0B-450E-892A-D13448275FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF1C2B2-2E0B-450E-892A-D13448275FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF1C2B2-2E0B-450E-892A-D13448275FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD9F96E-A4C7-4F58-8F3D-B533A4D4FAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD9F96E-A4C7-4F58-8F3D-B533A4D4FAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD9F96E-A4C7-4F58-8F3D-B533A4D4FAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD9F96E-A4C7-4F58-8F3D-B533A4D4FAB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

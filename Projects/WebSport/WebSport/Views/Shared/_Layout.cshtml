@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AdminLTE 2 | Dashboard</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    <!-- FontAwesome 4.3.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons 2.0.0 -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/bundles/bootstrap_css")    
+    @Styles.Render("~/bundles/img")
+    
+</head>
+<body class="skin-blue">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="index2.html" class="logo">Races Organizer</a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="/" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu"></div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">NAVIGATION</li>
+                    <li class="active treeview">
+                        <a href=@Url.Action("Index","Race")>
+                            <i class="fa fa-dashboard"></i> <span>
+                            Courses
+                            </span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                    </li>   
+                    <li class="treeview">
+                        <a href=@Url.Action("Index","Organizer")>
+                            <i class="fa fa-angellist"></i> <span>
+                            Organisateurs
+                            </span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                    </li> 
+                    <li class="treeview">
+                        <a href=@Url.Action("Index","Competitor")>
+                            <i class="fa fa-child"></i> <span>
+                            Participants
+                            </span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                    </li>                 
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <div class="content-wrapper">
+            <div class="div-content">
+                @RenderBody()
+            </div>        
+        </div><!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 0.1
+            </div>
+            <strong>Copyright &copy; 2018 AI.</strong> All rights reserved
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap_js")
+    @Scripts.Render("~/bundles/js")
+
+</body>
+</html>
+
+

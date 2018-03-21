@@ -139,3 +139,34 @@ public class Outils
 -----
 
 __________________________________
+public class RepositoryFactory
+  {
+      public static IRepository<T> GetRepository<T>() where T : IIdentifiable
+      {
+          return new SerializerRepository<T>();
+      }
+  }
+}
+------
+public interface IRepository<T> where T : IIdentifiable
+    {
+        List<T> GetAll();
+        void Insert(T element);
+        T GetById(int id);
+        void Update(T competitor);
+        void Delete(int id);
+    }
+-----
+public class CompetitorRepository : IRepository<Competitor>
+    {
+        private SqlConnection DBConnexion ;
+
+        public CompetitorRepository()
+        {
+            DBConnexion = new DBConnexion().OpenConnexion();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }

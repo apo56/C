@@ -12,9 +12,9 @@ namespace DAL
 {
     public interface IRepository<T> where T : IIdentifiable
     {
-        string connexionString = ConfigurationManager.ConnectionStrings["connexionString"].ConnectionString;
-        var connection = new SqlConnection(connexionString);
-        connection.Open();
+        //string connexionString = ConfigurationManager.ConnectionStrings["connexionString"].ConnectionString;
+        //var connection = new SqlConnection(connexionString);
+        //connection.Open();
 
         
         
