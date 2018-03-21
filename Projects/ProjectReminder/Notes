@@ -114,10 +114,11 @@ public List<T> GetAll()
 -----
 public class Projet : IIdentifiable
     {    public int Id { get; set; }
+
         public string Nom { get; set; }
         public List<Notes> notes
         public string description
-
+        public string 
     }
 -----
 public class Bricolage : Projet
@@ -170,3 +171,4 @@ public class CompetitorRepository : IRepository<Competitor>
         {
             throw new NotImplementedException();
         }
+__________________________________
