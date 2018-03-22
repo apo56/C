@@ -1,0 +1,29 @@
+Entity
+__________________________________
+Database First -> DB existante -> fichier de correspondance
+Code First -> DB générée via annotation dans classe
+                    if( new application && travail équipe)
+______________________
+Modification de la DB
+-----
+faire migration via outils -> gestionnaire de package nugget -> console
+-----
+!!!Le projet de démarrage doit etre celui qui porte la chaine de connection!!!
+projet par défaut
+-----
+Console nuggets :
+-Enable-Migrations
+-add-Migration Name
+-Update-Database
+-
+-
+-----
+
+______________________
+pour voir override des différentes méthodes dispo d'une classe
+-----
+public override
+______________________
+!!!Attention!!!
+Virtual sur List pour Entity
+g

@@ -9,8 +9,8 @@ namespace DAL
 {
     public class RaceRepository : IRepository<Race>
     {
+        private Context db;
 
-        private Context db = new Context();
 
         public void Delete(int id)
         {
@@ -28,6 +28,8 @@ namespace DAL
         {
             return db.Races.Find(id);
         }
+
+        
 
         public void Insert(Race element)
         {

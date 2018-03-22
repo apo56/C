@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace BO
 {
-    [Serializable]
+    
     public class Race : IIdentifiable
     {
         public int Id { get; set; }
@@ -30,5 +30,11 @@ namespace BO
         [XmlIgnore]
         [Display(Name = "Organisateur")]
         public Organizer Organizer { get; set; }
+
+        //!!! instanciation de la list(si vide, pas de soucis )
+        public Race()
+        {
+            Competitors = new List<Competitor>();
+        }
     }
 }

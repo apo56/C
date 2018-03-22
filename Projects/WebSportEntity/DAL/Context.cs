@@ -10,7 +10,20 @@ namespace DAL
 {
     public class Context : DbContext
     {
-        private Context db ;
+       
+
+        public Context GetContext(Context db)
+        {
+            if (db ==null)
+            {
+                Context newContext= new Context();
+                return newContext;
+            }
+            else
+            {
+                return db;
+            }
+        }
 
         public DbSet<BO.Race> Races { get; set; }
 

@@ -9,9 +9,8 @@ namespace DAL
 {
     public interface IRepository<T> where T : IIdentifiable
     {
-        //private Context db = new Context();
 
-
+        
         List<T> GetAll();
         void Insert(T element);
         T GetById(int id);

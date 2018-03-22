@@ -9,15 +9,10 @@ namespace DAL
 {
     public class RepositoryFactory
     {
-
-        public static IRepository<T> GetRepository<T>() where T : IIdentifiable
-        {
-
-            return new SerializerRepository<T>();
-        }
-        public static IRepository<T> GetRepository<T>() where T : IIdentifiable
-        {
-            return new RaceRepository();
-        }
+        
+        //public static IRepository<T> GetRepoRace<T>() where T : IIdentifiable
+        //{
+        //    return new RaceRepository<T>();
+        //}
     }
 }

@@ -118,7 +118,7 @@ public class Projet : IIdentifiable
         public string Nom { get; set; }
         public List<Notes> notes
         public string description
-        public string 
+        public string
     }
 -----
 public class Bricolage : Projet
@@ -172,3 +172,34 @@ public class CompetitorRepository : IRepository<Competitor>
             throw new NotImplementedException();
         }
 __________________________________
+public class Race : IIdentifiable
+    {
+        public int Id { get; set; }
+
+        [Display(Name = "Titre")]
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Commence le")]
+        public DateTime DateStart { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Fini le")]
+        public DateTime DateEnd { get; set; }
+
+        public virtual List<Competitor> Competitors { get; set; }
+
+        [XmlIgnore]
+        [Display(Name = "Organisateur")]
+        public Organizer Organizer { get; set; }
+
+!!! instanciation de la list (si vide, pas de soucis )
+        public Race()
+        {
+            Competitors = new List<Competitor>();
+        }
+    }

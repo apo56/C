@@ -8,6 +8,9 @@ namespace BO
         public virtual List<Race> Races { get; set; }
 
 
-        
+        public Organizer()
+        {
+            Races= new List<Race>();
+        }
     }
 }

@@ -13,8 +13,9 @@ namespace WebSportEntity.Controllers
 {
     public class RacesController : Controller
     {
+
         private Context db = new Context();
-        private RaceRepository raceRepo;
+        private RaceRepository raceRepo = new RaceRepository();
 
         // GET: Races
         public ActionResult Index()

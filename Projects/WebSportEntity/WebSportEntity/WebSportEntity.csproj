@@ -222,6 +222,7 @@
     <Content Include="Views\Organizers\Details.cshtml" />
     <Content Include="Views\Organizers\Edit.cshtml" />
     <Content Include="Views\Organizers\Index.cshtml" />
+    <Content Include="Views\TestList_partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
