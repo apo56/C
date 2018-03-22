@@ -1,4 +1,5 @@
-﻿@model BO.Organizer
+﻿@using BO
+@model BO.Organizer
 
 @{
     ViewBag.Title = "Details";
@@ -43,6 +44,25 @@
         </dd>
 
     </dl>
+    
+    @*@if (Model.Races.Count == 0)
+    {
+        Html.RenderPartial(
+            "~/Views/Races/Create.cshtml",
+            Model.Races,
+            new ViewDataDictionary(this.ViewData) { { "Create", Model.Races} }
+            );
+    }*@
+
+    @if (Model.Races.Count == 0)
+    {
+        Html.Partial(
+            "Create",
+            Model,
+            new ViewDataDictionary(this.ViewData) { { "Create", Model.Races } }
+            );
+    }
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

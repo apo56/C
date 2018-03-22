@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompetitorRepository.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\201803220928272_First.cs" />
@@ -56,6 +57,7 @@
       <DependentUpon>201803220928272_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="OrganizerRepository.cs" />
     <Compile Include="RaceRepository.cs" />
     <Compile Include="RepositoryFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

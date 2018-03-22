@@ -8,8 +8,8 @@ Modification de la DB
 -----
 faire migration via outils -> gestionnaire de package nugget -> console
 -----
-!!!Le projet de démarrage doit etre celui qui porte la chaine de connection!!!
-projet par défaut
+!!! Le projet de démarrage => chaine de connection!!!
+    Le projet par défaut => le context
 -----
 Console nuggets :
 -Enable-Migrations
@@ -26,4 +26,15 @@ public override
 ______________________
 !!!Attention!!!
 Virtual sur List pour Entity
-g
+______________________
+
+
+        @if (Model.Races.Count == 0)
+        {
+            @Html.Partial("~/Views/Races/Create.cshtml")
+        }
+
+______________________
+system.data.Entity
+
+Include => permet de récupérer 2 objets en relation

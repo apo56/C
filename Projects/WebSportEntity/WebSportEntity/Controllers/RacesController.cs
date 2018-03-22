@@ -15,12 +15,20 @@ namespace WebSportEntity.Controllers
     {
 
         private Context db = new Context();
-        private RaceRepository raceRepo = new RaceRepository();
+        private RaceRepository RaceRepo ;
+        private CompetitorRepository CompetRepo;
+
+        public RacesController()
+        {
+            var RaceRepo = RepositoryFactory.GetRepoRace(db);
+            var CompetRepo = RepositoryFactory.GetRepoRace(db);
+
+        }
 
         // GET: Races
         public ActionResult Index()
         {
-            return View(raceRepo.GetAll());
+            return View(db.Races.ToList());
         }
 
         // GET: Races/Details/5
@@ -31,6 +39,7 @@ namespace WebSportEntity.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Race race = db.Races.Find(id);
+
             if (race == null)
             {
                 return HttpNotFound();
@@ -39,7 +48,7 @@ namespace WebSportEntity.Controllers
         }
 
         // GET: Races/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
             return View();
         }

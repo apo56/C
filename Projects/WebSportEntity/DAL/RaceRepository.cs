@@ -11,6 +11,11 @@ namespace DAL
     {
         private Context db;
 
+        public RaceRepository(Context context)
+        {
+            db = context;
+        }
+
 
         public void Delete(int id)
         {

@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace MvcApplication1.Helpers
+namespace WebSportEntity.Extension
 {
     public static class ImageHelper
     {

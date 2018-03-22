@@ -14,7 +14,7 @@ namespace WebSportEntity.Controllers
     public class OrganizersController : Controller
     {
         private Context db = new Context();
-
+        
         // GET: Organizers
         public ActionResult Index()
         {
@@ -29,6 +29,13 @@ namespace WebSportEntity.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Organizer organizer = db.Organizers.Find(id);
+            if (organizer.Races.Count==0)
+            {
+                Race race = new Race();
+                organizer.Races = new List<Race>();
+            }
+            
+                 
             if (organizer == null)
             {
                 return HttpNotFound();
