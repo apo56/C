@@ -7,7 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BO;
-using WebSportEntity.Models;
+using DAL;
+using WebSportEntity;
 
 namespace WebSportEntity.Controllers
 {

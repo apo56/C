@@ -7,18 +7,19 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BO;
-using WebSportEntity.Models;
+using DAL;
 
 namespace WebSportEntity.Controllers
 {
     public class RacesController : Controller
     {
         private Context db = new Context();
+        private RaceRepository raceRepo;
 
         // GET: Races
         public ActionResult Index()
         {
-            return View(db.Races.ToList());
+            return View(raceRepo.GetAll());
         }
 
         // GET: Races/Details/5
