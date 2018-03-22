@@ -38,3 +38,47 @@ ______________________
 system.data.Entity
 
 Include => permet de récupérer 2 objets en relation
+______________________
+EXEMPLE Partial
+----
+@model BO.Warrior
+
+<h4>Warrior</h4>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Titre)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Titre)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.NomPropre)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.NomPropre)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Weapon)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Weapon.Nom)
+    </dd>
+</dl>
+---------
+@model BO.Warrior
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    @Html.Partial("_Details", Model)
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+---------
