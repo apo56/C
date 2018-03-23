@@ -1,0 +1,84 @@
+﻿@model WebSportVersionEF.Models.ResumeVM
+
+
+<div class="row" id="resume">
+    <div class="col-md-4">
+        
+        <fieldset>
+            <legend>Organizers</legend>
+            <p>Nombre d'organizers : @Model.NbOrganizers</p>
+            <u>Derniers ajouts</u>
+            <div class="row">
+                <ul class="col-sm-8">
+                    @foreach (var item in Model.LastOrgs)
+                    {
+                        <li>
+                            @item.FullName
+                        </li>
+                    }
+                </ul>
+                <ul class="col-sm-4 text-right">
+                    @foreach (var item in Model.LastOrgs)
+                    {
+                        <li>
+                            <a href="@Url.Action("Edit", "Organizers", new { id = item.Id })" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                            <a href="@Url.Action("Details", "Organizers", new { id = item.Id })" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-md-4">
+        <fieldset>
+            <legend>Races</legend>
+            <p>Nombre de races : @Model.NbRaces</p>
+            <u>Derniers ajouts</u>
+            <div class="row">
+                <ul class="col-sm-8">
+                    @foreach (var item in Model.LastRaces)
+                    {
+                        <li>
+                            @item.Title
+                        </li>
+                    }
+                </ul>
+                <ul class="col-sm-4 text-right">
+                    @foreach (var item in Model.LastRaces)
+                    {
+                        <li>
+                            <a href="@Url.Action("Edit", "Races", new { id = item.Id })" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                            <a href="@Url.Action("Details", "Races", new { id = item.Id })" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-md-4">
+        <fieldset>
+            <legend>Competitors</legend>
+            <p>Nombre de competitors : @Model.NbCompetitors</p>
+            <u>Derniers ajouts</u>
+            <div class="row">
+                <ul class="col-sm-8">
+                    @foreach (var item in Model.LastCompts)
+                    {
+                        <li>
+                            @item.FullName
+                        </li>
+                    }
+                </ul>
+                <ul class="col-sm-4 text-right">
+                    @foreach (var item in Model.LastCompts)
+                    {
+                        <li>
+                            <a href="@Url.Action("Edit", "Competitors", new { id = item.Id })" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                            <a href="@Url.Action("Details", "Competitors", new { id = item.Id })" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </fieldset>
+    </div>
+</div>

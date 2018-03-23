@@ -1,0 +1,19 @@
+﻿@model API.Record
+
+@{
+    ViewBag.Title = "SelectDep";
+}
+
+<h2>SelectDep</h2>
+
+<form action="/Record/index" method="post">
+    
+    <div>
+        <label for="Departement">N° de Departement:</label>
+        <input type="text" name="Departement" value="" />
+        @Html.ValidationMessage("Departement")
+    </div>
+    <input type="submit" value="Submit" class="submit" />
+</form>
+
+@Html.ActionLink("Edit", "Edit", new { id=Model }) |

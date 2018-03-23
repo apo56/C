@@ -1,0 +1,37 @@
+﻿@using WebSportVersionEF.Extensions
+@model BO.Organizer
+
+@{
+    var mode = Model == null;
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h2>@Html.ModeWidgetLabels(mode)</h2>
+
+    <div class="form-horizontal">
+        <h4>Organizer</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.WidgetFor(model => model.Nom)
+        @Html.WidgetFor(model => model.Prenom)
+        @Html.WidgetFor(model => model.Email)
+        @Html.WidgetFor(model => model.DateNaissance)
+
+        @Html.SubmitWidget(Html.ModeWidgetLabels(mode).ToString(), "success")
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
