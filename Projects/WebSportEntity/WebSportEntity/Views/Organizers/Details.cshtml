@@ -54,11 +54,20 @@
             );
     }*@
 
-    @if (Model.Races.Count == 0)
+    @*@if (Model.Races.Count == 0)
     {
         Html.Partial(
-            "Create",
-            Model,
+            "~/Views/Races/Create.cshtml",
+            new Race(),
+            new ViewDataDictionary(this.ViewData) { { "Create", Model.Races } }
+            );
+    }*@
+
+    @if (Model.Races.Count == 0)
+    {
+        Html.RenderPartial(
+            "~/Views/Races/Create.cshtml",
+            new Race(),
             new ViewDataDictionary(this.ViewData) { { "Create", Model.Races } }
             );
     }
