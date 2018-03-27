@@ -1,4 +1,10 @@
-﻿@model IEnumerable<API.Record>
+﻿@using System.Activities.Statements
+@using System.ComponentModel.DataAnnotations
+@using System.Reflection
+@using System.Web.Mvc.Html
+@using API
+@using Microsoft.Ajax.Utilities
+@model IEnumerable<API.Record>
 
 @{
     ViewBag.Title = "Index";
@@ -10,91 +16,50 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table table-bordered table-inverse ">
+
+
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.fields.departement)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.libelle_departement)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.population)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.nombre_de_logements)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.cambriolages_de_logement)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.coups_et_blessures_volontaires_sur_personnes_de_15_ans_ou_plus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.vols_avec_armes_armes_a_feu_armes_blanches_ou_par_destination)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.vols_sans_violence_contre_des_personnes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.vols_violents_sans_arme)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.vols_dans_les_vehicules)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.vols_d_accessoires_sur_vehicules)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fields.vols_de_vehicules_automobiles_ou_deux_roues_motorises)
-        </th>
-        
 
-    </tr>
-
-@foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(model => item.fields.departement)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.libelle_departement)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.population)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.nombre_de_logements)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.cambriolages_de_logement)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.coups_et_blessures_volontaires_sur_personnes_de_15_ans_ou_plus)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.vols_avec_armes_armes_a_feu_armes_blanches_ou_par_destination)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.vols_sans_violence_contre_des_personnes)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.vols_violents_sans_arme)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.vols_dans_les_vehicules)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.vols_d_accessoires_sur_vehicules)
-        </td>
-        <td>
-            @Html.DisplayFor(model => item.fields.vols_de_vehicules_automobiles_ou_deux_roues_motorises)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.recordid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.recordid }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.recordid })
-        </td>
+        @*@foreach (var item in Model.GetType().GetProperties().Select(p => p.Name))
+        {*@
+
+        @foreach (var fields  in Model.Select(record => record.fields).GetType().GetProperties())
+        {
+
+
+            //PropertyInfo[] properties = typeof(Record).GetProperties();
+            //foreach (PropertyInfo property in properties)
+            //{
+            //    property.SetValue(record, value);
+            //}
+
+            //GetCustomAttribute<DisplayAttribute>().GetName()
+            //string name1 = item.fields.GetName();
+            //Console.WriteLine(name1);
+            //string name2= nameof(item.fields);
+            //Console.WriteLine(name2);
+            //property.GetCustomAttribute<DisplayAttribute>().GetName()
+            
+            <th>
+                @Html.DisplayNameFor(record=> record.fields.GetType().GetEnumName(fields));
+            </th>
+        }
     </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.GetEnumerator().Current.fields)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.recordid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.recordid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.recordid })
+            </td>
+        </tr>
+    }
 
 </table>
+

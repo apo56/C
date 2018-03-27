@@ -23,6 +23,15 @@ namespace API
             public int vols_de_vehicules_automobiles_ou_deux_roues_motorises { get; set; }
             public int vols_violents_sans_arme { get; set; }
             public int population { get; set; }
-        }
+
+
+            public string GetName()
+            {
+                string name = this.GetType().Name;
+
+                return name;
+            }
+    }
+    
     
 }

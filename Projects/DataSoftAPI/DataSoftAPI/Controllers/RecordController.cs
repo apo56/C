@@ -27,13 +27,28 @@ namespace DataSoftAPI.Controllers
         // GET: Record
         public ActionResult Index(string Departement)
         {
-            var json = client.DownloadString(adresse+Departement);
+            //adresse = (Departement.HasValue) ? adresse : adresse + (string) Departement;
+
+            string adresse="";
+            //string adresse = "";
+            if (Departement.Length==0)
+            {
+                adresse = @"https://public.opendatasoft.com/api/records/1.0/search/?dataset=crimes-et-delits-enregistres-par-les-forces-de-securite-en-2016-par-departement&facet=departement&facet=libelle_departement&refine.departement=35";
+
+            }
+            else
+            {
+                adresse = @"https://public.opendatasoft.com/api/records/1.0/search/?dataset=crimes-et-delits-enregistres-par-les-forces-de-securite-en-2016-par-departement&facet=departement&facet=libelle_departement&refine.departement="+Departement;
+            }
+
+            var json = client.DownloadString(adresse);
             var obj = JsonConvert.DeserializeObject<RootObject>(json);
 
             //Record listRecord  obj.records.ToList();
 
+            var listField = obj.records.Select(m => m.fields.GetName()).ToList();
 
-
+            
             return View(obj.records);
         }
 

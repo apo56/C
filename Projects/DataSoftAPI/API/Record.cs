@@ -14,5 +14,14 @@ namespace API
         public Fields fields { get; set; }
         public Geometry geometry { get; set; }
         public DateTime record_timestamp { get; set; }
+
+        public string[] ListRecordProperty()
+        {
+            var listRecordProperty = Utils.PropertiesFromType(this.ListRecordProperty());
+
+
+            return listRecordProperty;
+        }
+
     }
 }
